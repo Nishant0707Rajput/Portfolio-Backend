@@ -1,7 +1,7 @@
 const {env} = require("../constant");
 const mongoose = require('mongoose');
 
-mongoose.connect(env.MONGO_URI, { useNewUrlParser: true });
+mongoose.connect(env.MONGO_URI);
 
 const db = mongoose.connection;
 
