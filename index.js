@@ -36,6 +36,9 @@ app.use((req, res, next) => {
 app.use(bodyParser.json({ limit: "2mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use('/',(req,res)=>{
+  return res.json({message:"Portfolio Server running"});
+})
 app.use(require("./app/middleware/rateLimiting"));
 const httpServer = http
   .createServer(app.handle.bind(app))
