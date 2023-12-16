@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json({ limit: "2mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.enable('trust proxy');
+// app.enable('trust proxy');
 // app.use((req, res, next) => {
 //     if (req.secure) {
 //         next();

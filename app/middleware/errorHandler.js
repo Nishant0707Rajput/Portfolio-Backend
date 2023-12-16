@@ -15,6 +15,7 @@ exports.notFound = (req, res) => {
 
 // Method not allowed error middleware.
 exports.methodNotAllowed = (req, res) => {
+  console.log(">>>>>>>>>>.",req.originalUrl);
   return response.error(
     req,
     res,
