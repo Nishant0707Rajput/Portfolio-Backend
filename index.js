@@ -35,7 +35,14 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json({ limit: "2mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.enable('trust proxy');
+app.use((req, res, next) => {
+    if (req.secure) {
+        next();
+    } else {
+        res.redirect('https://' + req.headers.host + req.url);
+    }
+});
 
 app.use(require("./app/middleware/rateLimiting"));
 app.get('/',(req,res)=>{
