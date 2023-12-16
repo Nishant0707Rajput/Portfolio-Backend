@@ -3,9 +3,7 @@ require('dotenv').config();
 const env = {
   API_KEY:process.env.API_KEY,
   PORT: process.env.PORT,
-  FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
-  FIREBASE_CLIENT_EMAIL: process.env.FIREBASE_CLIENT_EMAIL,
-  FIREBASE_PRIVATE_KEY: process.env.FIREBASE_PRIVATE_KEY
+  MONGO_URI: process.env.MONGO_URI
 };
 
 const env_type = {
