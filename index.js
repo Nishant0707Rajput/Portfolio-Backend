@@ -44,10 +44,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     }
 // });
 
-app.use(require("./app/middleware/rateLimiting"));
-app.get('/',(req,res)=>{
-  return res.json({message:"Portfolio Server running"});
-})
+// app.use(require("./app/middleware/rateLimiting"));
+
 const httpServer = http
   .createServer(app.handle.bind(app))
   .listen(env.PORT, () => {
