@@ -6,7 +6,7 @@ const rateLimitMiddleware = setRateLimit({
     max: constantCommon.API_PER_DAY,
     message: JSON.stringify({ "success": true,
     "status_code": 429,
-    "message": `You exceeded the limit of ${constantCommon.API_PER_DAY} per day`,
+    "message": `Hey, Sorry! You exceeded the limit of ${constantCommon.API_PER_DAY} requests per day`,
     "result": {} }),
     headers: true,
 });
