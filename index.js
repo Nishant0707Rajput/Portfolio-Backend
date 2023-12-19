@@ -51,7 +51,6 @@ const httpServer = http
   .listen(env.PORT, () => {
     console.info(`Server up successfully - port:${process.env.PORT}`);
   });
-
 app.use("/api", require("./app/router/index"));
 
 

@@ -11,7 +11,8 @@ exports.saveUser = async (req, res) => {
       name: req.body.name,
       phone: req.body.phone,
       description: req.body.description,
-      ip: req.socket.remoteAddress
+      ip: (req.headers['x-forwarded-for'] || '').split(',').pop().trim() || 
+      req.socket.remoteAddress
     });
     const savedUserResponse = await newUser.save();
     const result = {
